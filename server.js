@@ -15,6 +15,8 @@ MongoClient.connect(`mongodb://127.0.0.1:27017`, {poolSize:20}, (err, costumer) 
     if (err) {
         console.log(err);
         return;
+    } else {
+        console.log(`Runnung on port: ${ws.options.port}`);
     }
     
 
