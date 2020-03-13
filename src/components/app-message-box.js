@@ -74,7 +74,7 @@ class AppMessageBox extends LitElement {
 
     constructor() {
         super();
-        this.username = sessionStorage.getItem('username');
+        this.username = localStorage.getItem('username');
     }
 
 

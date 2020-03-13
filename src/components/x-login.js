@@ -63,7 +63,7 @@ class MyLogin extends BaseElement {
 
     constructor() {
         super();
-        this.username = this.username = sessionStorage.getItem('username');
+        this.username = localStorage.getItem('username');
         if (this.username){
             this.redirectTo('/chat')
         }
@@ -79,7 +79,7 @@ class MyLogin extends BaseElement {
             e.target.value = '';
             return;
         }
-        sessionStorage.setItem('username', username);
+        localStorage.setItem('username', username);
         this.redirectTo('/chat');
 
     }

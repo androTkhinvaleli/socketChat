@@ -59,7 +59,8 @@ MongoClient.connect(`mongodb://127.0.0.1:27017`, {poolSize:20}, (err, costumer) 
 
         socket.on('message', message => {
             let msg = JSON.parse(message);
-            
+            msg.date = new Date;
+            console.log(msg);
             console.log('inserted msg')
             if (msg.to === "all") {
                 chat.insertOne(msg);

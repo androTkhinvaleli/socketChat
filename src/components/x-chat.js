@@ -266,7 +266,7 @@ class MyChat extends BaseElement {
 
     constructor() {
         super();
-        this.username = sessionStorage.getItem('username');
+        this.username = localStorage.getItem('username');
         if (!this.username) {
             this.redirectTo('/login');
             return;
@@ -342,7 +342,7 @@ class MyChat extends BaseElement {
     }
 
     logout() {
-        sessionStorage.removeItem("username");
+        localStorage.removeItem("username");
         // document.location.reload(true);
         this.socket.close();
         this.redirectTo('/login');
