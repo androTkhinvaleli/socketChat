@@ -37,7 +37,7 @@ MongoClient.connect(`mongodb://127.0.0.1:27017`, {poolSize:20}, (err, costumer) 
         chat.find({ $or: [ {'usr':user}, {'to': 'all'}, {'to': user} ] }).limit(100).toArray( function(err, result) {
             if (err) throw err;
             oldMessages = result;
-            console.log(user + ' has joined');
+
             for (let i = 0; i < oldMessages.length; i++) {
                 let msg = oldMessages[i];
                 let message = JSON.stringify(oldMessages[i]);
